@@ -1,7 +1,11 @@
 package com.example.calculator.controller;
 
+import com.example.calculator.model.Operation;
+import com.example.calculator.service.CalculatorService;
+import com.example.calculator.service.antlr4.CalculatorLexer;
+import com.example.calculator.service.antlr4.CalculatorParser;
+import jakarta.annotation.PostConstruct;
 import java.util.Stack;
-
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.slf4j.Logger;
@@ -12,15 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.calculator.model.Operation;
-import com.example.calculator.service.CalculatorService;
-import com.example.calculator.service.antlr4.CalculatorLexer;
-import com.example.calculator.service.antlr4.CalculatorParser;
-
-import jakarta.annotation.PostConstruct;
-
-
-@CrossOrigin(origins = "http://localhost:8082")
+@CrossOrigin(origins = "http://localhost:80")
 @RestController
 public class CalculatorController {
 	private static final Logger logger = LoggerFactory.getLogger(CalculatorController.class);
